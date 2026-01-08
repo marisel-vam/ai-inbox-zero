@@ -1,0 +1,8 @@
+{
+  "enabled": false,
+  "rules": {
+    "archive_newsletters": true,
+    "delete_spam": true,
+    "archive_low_priority": false
+  }
+}

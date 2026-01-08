@@ -1,0 +1,7 @@
+{
+  "enabled": false,
+  "auto_archive_newsletters": true,
+  "auto_delete_spam": true,
+  "auto_archive_low_priority": false,
+  "real_time_monitoring": false
+}

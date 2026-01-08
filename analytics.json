@@ -1,0 +1,31 @@
+{
+  "total_processed": 130,
+  "time_saved_minutes": 390,
+  "inbox_zero_streak": 0,
+  "sender_frequency": {
+    "GitHub <noreply@github.com>": 2,
+    "\"Oracle University Learning Community (NO-REPLY)\" <ou.oracle@vanillaforums.email>": 1,
+    "Arulmathi <arulmathimurugan0003@gmail.com>": 2,
+    "Google <no-reply@accounts.google.com>": 6,
+    "Spotify <no-reply@spotify.com>": 3,
+    "LinkedIn <notifications-noreply@linkedin.com>": 6,
+    "Google Pay <googlepay-noreply@google.com>": 2,
+    "LinkedIn <updates-noreply@linkedin.com>": 4,
+    "bigbasket <alert@info.bigbasket.com>": 2,
+    "Adobe Acrobat <mail@mail.adobe.com>": 2,
+    "Udemy <hello@students.udemy.com>": 5,
+    "\"MARISELVAM.M 21MSS011\" <mariselvamm21mss011@skasc.ac.in>": 2,
+    "Karthik Prabu <karthikprabu@learnflu.com>": 2,
+    "Tata CLiQ Fashion <tatacliq@mall.tatacliq.com>": 2,
+    "mariselvam.msc7@gmail.com": 6,
+    "Zomato <noreply@mailers.zomato.com>": 1,
+    "Shyaway <updates@promo.shyaway.com>": 2
+  },
+  "category_breakdown": {
+    "Newsletter": 38,
+    "Important": 12
+  },
+  "autopilot_actions": [],
+  "last_check": null,
+  "response_times": []
+}

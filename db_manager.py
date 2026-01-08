@@ -386,4 +386,4 @@ class DatabaseManager:
                 return True
         except Exception as e:
             logger.error(f"Error setting preference: {e}")
-            return False
+            return False 
