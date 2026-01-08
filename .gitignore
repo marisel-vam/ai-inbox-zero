@@ -38,6 +38,7 @@ history.json
 ai_inbox
 inbox_zero
 email_cache.json
+analytics.json
 *.db
 *.sqlite
 *.sqlite3
@@ -67,3 +68,7 @@ htmlcov/
 # Flask
 instance/
 .webassets-cache
+
+*.json
+# If you want to keep your project requirements, you can exclude it:
+!requirements.json
