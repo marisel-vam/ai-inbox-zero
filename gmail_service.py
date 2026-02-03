@@ -1,3 +1,4 @@
+
 import os.path
 import base64
 import logging
@@ -277,14 +278,17 @@ class GmailService:
     def delete_email(self, message_id: str) -> bool:
         """Move email to trash"""
         try:
-            self.service.users().messages().trash(
+            result = self.service.users().messages().trash(
                 userId='me',
                 id=message_id
             ).execute()
-            logger.info(f"Trashed message {message_id}")
+            logger.info(f"✅ Trashed message {message_id} - API response: {result.get('id')}")
             return True
         except HttpError as e:
-            logger.error(f"Error deleting email: {e}")
+            logger.error(f"❌ Error deleting email {message_id}: {e}")
+            return False
+        except Exception as e:
+            logger.error(f"❌ Unexpected error deleting email {message_id}: {e}")
             return False
     
     def mark_as_read(self, message_id: str) -> bool:
@@ -350,3 +354,15 @@ def delete_email_api(message_id):
     """Legacy function"""
     service = GmailService()
     return service.delete_email(message_id)
+# In gmail_service.py, add retry logic:
+def create_draft_reply(self, to, subject, reply_text, thread_id=None, retries=3):
+    for attempt in range(retries):
+        try:
+            # existing code...
+            return True
+        except Exception as e:
+            if attempt < retries - 1:
+                time.sleep(1)
+                continue
+            logger.error(f"Draft creation failed: {e}")
+            return False

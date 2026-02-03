@@ -133,12 +133,6 @@ class DatabaseManager:
                         ai_result.get('is_fallback', False)
                     ))
                     
-                    # Update analytics (ignore errors here)
-                    try:
-                        self._update_analytics(ai_result.get('category', 'Unknown'))
-                    except:
-                        pass  # Don't fail the whole operation if analytics fails
-                    
                     logger.info(f"Saved analysis for email {email_id}")
                     return True
                     
@@ -191,9 +185,6 @@ class DatabaseManager:
                     WHERE email_id = ?
                 ''', (email_id,))
                 
-                # Update analytics
-                self._increment_analytics_field('replies_sent')
-                
                 logger.info(f"Marked email {email_id} as sent")
                 return True
                 
@@ -210,7 +201,6 @@ class DatabaseManager:
                     UPDATE email_history SET archived = 1 WHERE email_id = ?
                 ''', (email_id,))
                 
-                self._increment_analytics_field('emails_archived')
                 return True
                 
         except Exception as e:
@@ -226,7 +216,6 @@ class DatabaseManager:
                     UPDATE email_history SET deleted = 1 WHERE email_id = ?
                 ''', (email_id,))
                 
-                self._increment_analytics_field('emails_deleted')
                 return True
                 
         except Exception as e:

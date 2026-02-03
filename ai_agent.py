@@ -60,7 +60,7 @@ class EmailAnalyzer:
         return any(pattern in sender_lower for pattern in no_reply_patterns)
     
     @rate_limit(calls=30, period=60)  # Increased to 30 calls per minute
-    def analyze_email(self, sender, subject, body, user_name="Mariselvam M"):
+    def analyze_email(self, sender, subject, body, user_name="Arulmathi M"):
         """
         Analyze email using AI and return structured response
         
@@ -136,37 +136,36 @@ Analyze this email and provide:
    **CRITICAL RULES FOR REPLIES:**
    
    ✅ **Always draft replies for Important & Personal emails**
-   - Be warm, professional, and helpful
-   - Address specific points mentioned in the email
-   - Show genuine interest and engagement
-   - Use natural, conversational language
-   - Add relevant questions or next steps when appropriate
+   - Be professional, clear, and direct
+   - Address the key point in the email
+   - Keep it concise (2-3 sentences)
+   - Include actionable next steps if needed
+   - Avoid unnecessary pleasantries or elaboration
    
    ❌ **Never reply to Newsletters or Spam**
    - Simply output: "No reply needed"
    
    **REPLY STYLE GUIDE:**
-   - **Tone**: Professional yet friendly, confident but humble
+   - **Tone**: Professional, clear, and direct
    - **Structure**: 
-     * Warm greeting using their name if available
-     * Acknowledge their email/request specifically
-     * Provide helpful, substantive response
-     * Include actionable next steps or questions
+     * Brief greeting (optional)
+     * Acknowledge their email in one sentence
+     * Provide concise, actionable response
      * Professional sign-off
-   - **Length**: 3-5 sentences (substantial but concise)
-   - **Intelligence**: Show you understood the context, reference specific details
-   - **Engagement**: Ask relevant questions, show interest, build relationships
+   - **Length**: 2-3 sentences MAXIMUM (concise and optimized)
+   - **Intelligence**: Reference key points, no fluff
+   - **Clarity**: Get to the point quickly, avoid unnecessary elaboration
    
-   **EXAMPLES OF GREAT REPLIES:**
+   **EXAMPLES OF OPTIMIZED REPLIES:**
    
    For meeting request:
-   "Hi Sarah! Thanks for reaching out about collaborating on the Q2 campaign. I'm definitely interested in exploring this further. Would Tuesday at 2 PM or Thursday at 10 AM work for a quick call to discuss the scope and timeline? Looking forward to working together on this!"
+   "Hi Sarah, I'd be happy to discuss the Q2 campaign collaboration. I'm available Tuesday at 2 PM or Thursday at 10 AM - which works better for you?"
    
    For project update:
-   "Hey Michael, appreciate the detailed update on the website redesign. The mockups look fantastic! I have a few thoughts on the navigation structure - would you be open to a brief review session this week? Also, curious about your timeline for the mobile version. Great work so far!"
+   "Thanks for the update, Michael. The mockups look great. I have some feedback on the navigation - could we schedule a brief review this week?"
    
    For personal invitation:
-   "Hi Emma! How wonderful to hear from you! I'd absolutely love to catch up over coffee. It's been way too long! I'm free next week - does Wednesday or Friday afternoon work for you? There's a great new café downtown I've been wanting to try. Can't wait to hear about your new venture!"
+   "Hi Emma, I'd love to catch up! I'm free Wednesday or Friday afternoon next week - does either work for you?"
 
 📋 OUTPUT FORMAT (strict JSON):
 {{
@@ -178,9 +177,9 @@ Analyze this email and provide:
 }}
 
 ⚡ REMEMBER: 
-- Be intelligent and engaging, not robotic
-- Show you actually read and understood the email
-- Make replies feel personal and thoughtful
+- Keep replies SHORT (2-3 sentences maximum)
+- Be direct and actionable, avoid fluff
+- Reference specific points to show understanding
 - Sign all replies with: "Best regards,\\n{user_name}" """
 
     def _parse_response(self, response_text, sender, subject):
@@ -257,7 +256,7 @@ Thank you for your email regarding "{subject}". I have received your message and
 (Note: This is an automated acknowledgment. A detailed response will follow.)
 
 Best regards,
-Mariselvam M"""
+Arulmathi M"""
             needs_reply = True
         
         return {

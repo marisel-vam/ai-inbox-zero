@@ -5,7 +5,7 @@ Your intelligent email assistant with Auto-Pilot mode.
 ## Quick Start
 
 1. Activate virtual environment: `venv\Scripts\activate`
-2. Run: `python ultimate_app.py`
+2. Run: `python premium_app.py`
 3. Open: http://localhost:5000
 
 ## Features
@@ -18,3 +18,4 @@ Your intelligent email assistant with Auto-Pilot mode.
 - Python 3.8+
 - Gmail Account
 - Groq API Key
+
